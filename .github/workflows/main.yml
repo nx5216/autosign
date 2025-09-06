@@ -1,7 +1,7 @@
 name: auto sign
 on:
   schedule:
-    - cron: '0 8 * * *' # 每天8:00 UTC运行
+    - cron: '0 1 * * *' # 每天1:00 UTC运行
   workflow_dispatch:
 
 jobs:
