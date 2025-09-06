@@ -1,0 +1,17 @@
+name: auto sign
+on:
+  schedule:
+    - cron: '0 18 * * 1-5' # 工作日每天18:00 UTC运行
+  workflow_dispatch:
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.9'
+    - name: Run script
+      run: python main.py
